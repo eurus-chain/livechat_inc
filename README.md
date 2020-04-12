@@ -25,4 +25,4 @@ You need to to add below code to example/android/app/src/main/AndroidManifest.xm
 ![Simulator Screen Shot - iPhone 11 Pro Max - 2020-04-13 at 03 16 41](https://user-images.githubusercontent.com/62240894/79078458-1e1d4a80-7d3b-11ea-9f9f-ae9e8913fca2.png)
 ![Simulator Screen Shot - iPhone 11 Pro Max - 2020-04-13 at 03 16 06](https://user-images.githubusercontent.com/62240894/79078455-1b225a00-7d3b-11ea-8aed-d76e07e5e3c1.png)
 
-For help getting started with Flutter, view our online documentation, which offers tutorials, samples, guidance on mobile development, and a full API reference
+For help getting started with Flutter, view our [online documentation](https://flutter.dev/docs), which offers tutorials, samples, guidance on mobile development, and a full API reference
