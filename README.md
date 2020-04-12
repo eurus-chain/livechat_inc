@@ -1,14 +1,20 @@
-# livechat_inc
+# LiveChat plugin for Flutter
 
-A new flutter plugin project.
+A Flutter plugin that integrates LiveChat to Flutter
+
+Please check the example folder for a full use case of a flutter app that uses the plugin.
 
 ## Getting Started
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+Get the [Crendentials](https://www.livechat.com//) for your LiveChat .
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### Integration
+LivechatInc.start_chat(LICENSE_NO, GROUP_ID, VISITOR_NAME, VISITOR_EMAIL);
+
+#### Android
+You need to to add below code to example/android/app/src/main/AndroidManifest.xml
+```
+<activity android:name="com.livechatinc.inappchat.ChatWindowActivity" android:configChanges="orientation|screenSize" />
+```
+
+For help getting started with Flutter, view our online documentation, which offers tutorials, samples, guidance on mobile development, and a full API reference
