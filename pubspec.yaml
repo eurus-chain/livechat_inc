@@ -1,8 +1,8 @@
 name: livechat_inc
-description: A new flutter plugin project.
+description: A flutter plugin for livechatinc.
 version: 0.0.1
 author: jiankeong <jk@oceantech.asia>
-homepage:
+homepage: https://github.com/jiankeong/livechat_inc
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
