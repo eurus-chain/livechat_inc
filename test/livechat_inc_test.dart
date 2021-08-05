@@ -18,6 +18,8 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await LivechatInc.platformVersion, '42');
+    final version = await LivechatInc.platformVersion;
+    print(version);
+    expect(version, 'Verify Platform version');
   });
 }

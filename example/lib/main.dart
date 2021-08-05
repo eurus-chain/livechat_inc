@@ -12,12 +12,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   final licenseNoTextController = TextEditingController();
   final groupIdTextController = TextEditingController();
   final visitorNameTextController = TextEditingController();
   final visitorEmailTextController = TextEditingController();
-
 
   @override
   void initState() {
@@ -27,19 +25,17 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      platformVersion = await LivechatInc.platformVersion;
+      await LivechatInc.platformVersion;
     } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
+      print('Failed to get platform version.');
     }
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
     if (!mounted) return;
-
   }
 
   @override
@@ -50,7 +46,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Live Chat Plugin example app'),
         ),
         body: GestureDetector(
-          onTap: (){
+          onTap: () {
             FocusScope.of(context).requestFocus(new FocusNode());
           },
           child: Container(
@@ -69,7 +65,7 @@ class _MyAppState extends State<MyApp> {
                     TextFormField(
                       keyboardType: TextInputType.number,
                       inputFormatters: <TextInputFormatter>[
-                        WhitelistingTextInputFormatter.digitsOnly
+                        FilteringTextInputFormatter.digitsOnly
                       ],
                       controller: licenseNoTextController,
                     ),
@@ -118,20 +114,26 @@ class _MyAppState extends State<MyApp> {
                     SizedBox(
                       height: 20,
                     ),
-                    new FlatButton(
-                        onPressed: (){
-                          LivechatInc.start_chat(licenseNoTextController.text, groupIdTextController.text, visitorNameTextController.text, visitorEmailTextController.text);
+                    new TextButton(
+                        style: TextButton.styleFrom(primary: Colors.black),
+                        onPressed: () {
+                          LivechatInc.start_chat(
+                              licenseNoTextController.text,
+                              groupIdTextController.text,
+                              visitorNameTextController.text,
+                              visitorEmailTextController.text);
                         },
-                        textColor: Colors.black,
-                        child: new Text("Start Live Chat", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
-                    ),
+                        child: new Text(
+                          "Start Live Chat",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        )),
                   ],
                 ),
               ),
             ),
           ),
-        )
-          ,
+        ),
       ),
     );
   }

@@ -5,8 +5,7 @@ author: jiankeong <jk@oceantech.asia>
 homepage: https://github.com/jiankeong/livechat_inc
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
-  flutter: ">=1.12.8 <2.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
